@@ -17,6 +17,7 @@ public class s1 {
 		driver.findElement(By.xpath("(//a[@href='/notebooks'])[1]")).click();
 		driver.findElement(By.xpath("//input[@value='Add to cart']")).click();
 		
+	
 		
 	}
 
