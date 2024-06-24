@@ -1,4 +1,4 @@
-package S31dropdown;
+package S31;
 
 import java.time.Duration;
 import java.util.List;
@@ -17,18 +17,22 @@ public class Booststarpdrpdwn {
 		
 		driver.findElement(By.xpath("//button[contains(@class,'multiselect')]")).click();
 		
-		//select single dopdown
+		//Step 1:select single dopdown
+		
 	//	driver.findElement(By.xpath("//input[@value='Java']")).click();
 		
-		//captutre the labels
-		List<WebElement> options = driver.findElements(By.xpath("//ul[contains(@class,'multiselect-container')]//li//label"));
-		System.out.println(options.size());
+		//Step 2 :captutre all options and findout size
 		
+		List<WebElement> options = driver.findElements(By.xpath("//ul[contains(@class,'multiselect-container')]//li//label"));
+		System.out.println("number of options:"+options.size());
+		
+		//printing options from dropdown
 		for (WebElement op : options) 
 		{
-			String s=op.getText();
-			System.out.println(s);
-			if(s.equalsIgnoreCase("java")||s.equalsIgnoreCase("python"))
+			String text=op.getText();
+			System.out.println(text);
+			//select multiple options
+			if(text.equalsIgnoreCase("java")||text.equalsIgnoreCase("python"))
 			{
 				op.click();
 			}
